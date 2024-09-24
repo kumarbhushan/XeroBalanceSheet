@@ -1,0 +1,42 @@
+{
+  "compilerOptions": {
+    "target": "es2017",                         // ECMAScript target version
+    "lib": ["dom", "dom.iterable", "esnext"],    // Include DOM and modern JS libs
+    "jsx": "react-jsx",                          // Use the React JSX transform
+    "module": "esnext",                          // Use ES modules
+    "moduleResolution": "node",                  // Resolve modules in Node.js style
+    "esModuleInterop": true,                     // Allow default imports from modules
+    "allowSyntheticDefaultImports": true,        // Allow synthetic imports from default modules
+    "skipLibCheck": true,                        // Skip type checks for declaration files (boosts performance)
+    "forceConsistentCasingInFileNames": true,    // Enforce case-sensitive file names
+    "strict": true,                              // Enable strict type checking
+    "noImplicitAny": true,                       // Disallow usage of `any`
+    "strictNullChecks": true,                    // Enable strict null checks
+    "strictFunctionTypes": true,                 // Enable strict function types
+    "strictBindCallApply": true,                 // Ensure stricter call/apply rules
+    "noImplicitThis": true,                      // Disallow implicit `this` type
+    "alwaysStrict": true,                        // Always use strict mode
+    "resolveJsonModule": true,                   // Enable importing `.json` files
+    "isolatedModules": true,                     // Ensure each file can be transpiled without depending on others
+    "noEmit": true,                              // Do not emit compiled JavaScript files
+    "baseUrl": "./src",                          // Set base URL for imports, allowing absolute paths from `src`
+    "paths": {                          
+      "components/*": ["components/*"],
+      "components/*/*": ["components/*/*"],
+      "interfaces/*": ["interfaces/*"],
+      "services/*": ["services/*"],
+      "styles/*": ["styles/*"]
+    },
+    "typeRoots": ["./node_modules/@types", "./src/types"],  // Directories to include for type definitions
+    "incremental": true                          // Enable incremental compilation for faster rebuilds
+  },
+  "plugins": [
+      // Transform paths in output .js files
+      { "transform": "typescript-transform-paths" },
+
+      // Transform paths in output .d.ts files (Include this line if you output declarations files)
+      { "transform": "typescript-transform-paths", "afterDeclarations": true },
+    ],
+  "include": ["src/**/*"],                       // Include all source files in the `src` folder
+  "exclude": ["node_modules", "build", "dist"]   // Exclude build and distribution folders
+}

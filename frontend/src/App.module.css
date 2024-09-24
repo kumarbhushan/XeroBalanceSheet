@@ -1,0 +1,16 @@
+.App{
+    text-align: center;
+    color: black;
+}
+.App__header{
+    width: 100%;
+    background-color: #17009a;
+    color: #ffffff;
+    height: 60px;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+.App__header__h2{
+    margin-left:20px;
+}
